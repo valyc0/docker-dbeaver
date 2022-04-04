@@ -93,15 +93,17 @@ services:
 ### docker cli ([click here for more info](https://docs.docker.com/engine/reference/commandline/cli/))
 
 ```bash
-docker run -d \
-  --name=audacity \
+docker build -t mydbeaver .
+
+```bash
+
+docker run -it --rm \
+  --name=mydbeaver \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=Europe/London \
+  -e TZ=Europe/Rome \
   -p 3000:3000 \
-  -v /path/to/config:/config \
-  --restart unless-stopped \
-  lscr.io/linuxserver/audacity
+  mydbeaver
 ```
 
 ## Parameters
