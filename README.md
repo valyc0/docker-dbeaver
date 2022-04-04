@@ -28,7 +28,7 @@ docker build -t mydbeaver .
 
 ```bash
 
-docker run -it --rm \
+docker run -d \
   --name=mydbeaver \
   -e PUID=1000 \
   -e PGID=1000 \
